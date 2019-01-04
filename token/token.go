@@ -12,8 +12,15 @@ const (
 	TYPE = "TYPE"
 
 	// 演算子
-	ASSIGN = "="
-	PLUS   = "+"
+	ASSIGN    = "="
+	PLUS      = "+"
+	MINUS     = "-"
+	BANG      = "!"
+	ATSTERISK = "*"
+	SLASK     = "/"
+
+	LT = "<"
+	GT = ">"
 
 	//デリミタ
 	COMMA     = ","
@@ -28,12 +35,27 @@ const (
 	//キーワード
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
+
+	// true or false
+	TRUE   = "TRUE"
+	FALSE  = "FALSE"
+	IF     = "IF"
+	ELSE   = "ELSE"
+	RETURN = "RETURN"
+
+	EQ     = "=="
+	NOT_EQ = "!="
 )
 
 var keywords = map[string]TokenType{
-	"func": FUNCTION,
-	"let":  LET,
-	"int":  TYPE,
+	"func":   FUNCTION,
+	"let":    LET,
+	"int":    TYPE,
+	"true":   TRUE,
+	"false":  FALSE,
+	"if":     IF,
+	"else":   ELSE,
+	"return": RETURN,
 }
 
 func LookUpIdent(ident string) TokenType {
